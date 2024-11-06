@@ -47,20 +47,20 @@ if uploaded_file is not None:
     st.markdown("<h1 style='text-align: center;'>Unsupervised Learning - RIAN</h1>", unsafe_allow_html=True)  # YYYYY diisi dengan nama panggilan
     st.dataframe(input_data)
 
-model_directory = r'C:\Users\tab3v\OneDrive\Dokumen\PMPM'
-model_path = {
-    "AGG_model": os.path.join(model_directory, "AGG_model.pkl"),
-    "KMeans_model": os.path.join(model_directory, "KMeans_model.pkl"),
-    "DBSCAN_model": os.path.join(model_directory, "DBSCAN_model.pkl"),
-}
+#model_directory = r'C:\Users\tab3v\OneDrive\Dokumen\PMPM'
+#model_path = {
+ #   "AGG_model": os.path.join(model_directory, "AGG_model.pkl"),
+  #  "KMeans_model": os.path.join(model_directory, "KMeans_model.pkl"),
+   # "DBSCAN_model": os.path.join(model_directory, "DBSCAN_model.pkl"),
+#}
 
-models = {}
-for model_name, path in model_path.items():
-    if os.path.exists(path):
-        with open(path, 'rb') as f:
-            models[model_name] = pickle.load(f)
-    else:
-        st.write(f"Model {model_name} tidak ditemukan di path : {path}")
+#models = {}
+#for model_name, path in model_path.items():
+ #   if os.path.exists(path):
+  #      with open(path, 'rb') as f:
+   #         models[model_name] = pickle.load(f)
+   # else:
+    #    st.write(f"Model {model_name} tidak ditemukan di path : {path}")
 
 avg_CL = st.sidebar.number_input("Average Credit Limit", 0, 100000)
 sum_CC = st.sidebar.number_input("Total Credit Cards", 0, 80)
